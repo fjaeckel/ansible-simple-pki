@@ -6,7 +6,7 @@
 
 [ default ]
 # CA name
-ca = {{simplepki_signing_ca_name}}  
+ca = {{simplepki_signing_ca_name}}
 suffix = "Signing CA"
 
 # The next part of the configuration file is used by the openssl req command.
@@ -33,7 +33,7 @@ subjectKeyIdentifier = hash
 
 [ ca ]
 # The default CA section
-default_ca = signing_ca            
+default_ca = signing_ca
 
 [ signing_ca ]
 # The CA cert
@@ -52,13 +52,13 @@ database = {{simplepki_signing_ca_db_dir}}/{{simplepki_signing_ca_name}}.db
 {% include 'inc/ca_defaults.txt' %}
 
 # Default cert extensions
-x509_extensions = email_ext    
-# How long before next CRL         
-default_crl_days = 7   
-# Copy extensions from CSR                  
+x509_extensions = email_ext
+# How long before next CRL
+default_crl_days = 365
+# Copy extensions from CSR
 copy_extensions = copy
-# How long to certify for                  
-default_days = 730                   
+# How long to certify for
+default_days = 730
 
 # Naming policies control which parts of a DN end up in the certificate and
 # under what circumstances certification should be denied.
